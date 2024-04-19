@@ -6,7 +6,7 @@ references:
    - https://labs.withsecure.com/publications/kapeka
    - https://app.any.run/tasks/1efb3ed4-cc0f-4690-a0ed-24516809bc72/
 author: Swachchhanda Shrawan Poudel
-date: 2023/04/18
+date: 2023/04/19
 tags:
     - attack.persistence
     - attack.defense_evasion
