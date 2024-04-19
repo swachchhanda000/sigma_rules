@@ -1,0 +1,33 @@
+title: Kapeka Backdoor Persistence through Schtasks
+id: af7e2e2a-81ec-4fd6-ae06-d490b032fb14
+status: experimental
+description: Detects usage of schtasks by Kapeka backdoor for persistence.
+references:
+    - https://labs.withsecure.com/publications/kapeka
+    - https://app.any.run/tasks/1efb3ed4-cc0f-4690-a0ed-24516809bc72/
+    - https://www.virustotal.com/gui/file/bd07fb1e9b4768e7202de6cc454c78c6891270af02085c51fce5539db1386c3f/behavior
+author: Swachchhanda Shrawan Poudel
+date: 2023/04/18
+tags:
+    - attack.persistence
+    - attack.t1053.005
+logsource:
+    category: process_creation
+    product: windows
+detection:
+    selection:
+        CommandLine|contains|all:
+        # "C:\Windows\system32\cmd.exe" /c schtasks /create /sc ONSTART /tn "Sens Api" /f /np /tr "C:\Windows\system32\rundll32.exe \"C:\ProgramData\Microsoft\cogyce.wll\", #1"
+            - 'schtasks'
+            - 'create'
+            - 'ONSTART'
+            - 'Sens Api'
+            - 'rundll32'
+            - '.wll'
+    condition: selection
+fields:
+    - CommandLine
+    - ParentCommandLine
+falsepositives:
+    - unknown
+level: medium
