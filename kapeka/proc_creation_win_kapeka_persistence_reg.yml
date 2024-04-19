@@ -1,5 +1,8 @@
 title: Kapeka Backdoor Autorun Persistence
 id: b9c5a847-1e0d-4d26-9f5a-273ec8f25b3a
+related:
+    - id: cbaa3ef3-07a9-4c8e-82d1-9e40578da7fd
+      type: similar
 status: experimental
 description: Detects direct modification of autorun in registry using reg.exe by Kapeka backdoor for persistence.
 references:

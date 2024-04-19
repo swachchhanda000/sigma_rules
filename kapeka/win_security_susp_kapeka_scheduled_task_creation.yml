@@ -20,7 +20,7 @@ tags:
 logsource:
     product: windows
     service: security
-    definition: 'The Advanced Audit Policy setting Object Access > Audit Other Object Access Events has to be configured to allow this detection. We also recommend extracting the Command field from the embedded XML in the event data.'
+    definition: 'The Advanced Audit Policy setting Object Access > Audit Other Object Access Events has to be configured to allow this detection.'
 detection:
     selection_eid:
         EventID: 4698
@@ -35,7 +35,7 @@ detection:
             - '.wll'
             - '#1'
     selection_taskname:
-      TaskContent|contains:
+        TaskContent|contains:
             - 'Sens Api'
             - 'OneDrive' # The scheduled task was called “OneDrive” instead of “Sens Api” in some cases
     condition: all of selection_*
