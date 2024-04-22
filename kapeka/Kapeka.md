@@ -9,5 +9,3 @@ Their assessment suggests that Kapeka is a tool used by an APT (Advanced Persist
 Despite limited public knowledge about Kapeka, WithSecure has identified its use in specific incidents, 
 particularly in regions like Estonia and Ukraine. Kapeka’s stealth mechanisms allow it to maintain persistence and evade detection. 
 If successfully delivered, it can serve as a powerful tool for long-term cyberespionage.
-
-These sigma rules are generate based on the analysis report by WithSecure
